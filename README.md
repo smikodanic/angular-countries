@@ -139,6 +139,8 @@ $scope.callback = function (selectedCountryObj) {
 <input type="text" ng-model="userDoc.phone">
 ```
 
+The result is:
+![angular-countries](https://raw.githubusercontent.com/smikodanic/angular-countries/master/angular-countries2.png "Selectable country list")
 
 
 ## 8. Licence
