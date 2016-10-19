@@ -140,6 +140,7 @@ $scope.callback = function (selectedCountryObj) {
 ```
 
 The result is:
+
 ![angular-countries](https://raw.githubusercontent.com/smikodanic/angular-countries/master/angular-countries2.png "Selectable country list")
 
 
