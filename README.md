@@ -101,7 +101,7 @@ Just copy & paste .
 
 
 ## 7. Get selected country object
-In oprder to get complete country object add *ng-controller="ngCountriesCtrl" ng-change="getCountryObj(userDoc.country, callback)*
+In order to get complete country object add *ng-controller="ngCountriesCtrl" ng-blur="getCountryObj(userDoc.country, callback)* .
 
 ```html
 <input type="text" list="countrylist" class="form-control" ng-model="userDoc.country" ng-controller="ngCountriesCtrl" ng-blur="getCountryObj(userDoc.country, callback)">
