@@ -100,7 +100,48 @@ Just copy & paste .
 ```
 
 
-## 7. Licence
+## 7. Get selected country object
+In oprder to get complete country object add *ng-controller="ngCountriesCtrl" ng-change="getCountryObj(userDoc.country, callback)*
+
+```html
+<input type="text" list="countrylist" class="form-control" ng-model="userDoc.country" ng-controller="ngCountriesCtrl" ng-blur="getCountryObj(userDoc.country, callback)">
+```
+
+and define collback function inside your controller:
+
+```javascript
+$scope.callback = function (selectedCountryObj) {
+  console.log(selectedCountryObj);
+};
+```
+
+Returned country object **selectedCountryObj** will be for example:
+
+```json
+{
+"name": "Croatia",
+"dial_code": "+385",
+"code": "HR"
+}
+```
+
+Also you can use this callback to get 'dial_code' and put it into 'phone' input tag.
+So when you select country this 'dial_code' will be inserted into 'phone' field automatically.
+
+```
+//in controller
+$scope.callback = function (selectedCountryObj) {
+  $scope.userDoc.phone = selectedCountryObj.dial_code;
+};
+
+
+//in HTML file
+<input type="text" ng-model="userDoc.phone">
+```
+
+
+
+## 8. Licence
 *Copyright (c) 2016 Saša Mikodanić*
 
 Licensed under [MIT](https://opensource.org/licenses/MIT) .

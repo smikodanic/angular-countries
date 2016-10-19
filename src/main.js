@@ -3,6 +3,24 @@ var countries = require('./models/countries.js');
 var ngCountries = angular.module('ngCountries', []);
 
 
+//controller
+ngCountries.controller('ngCountriesCtrl', function ($scope) {
+    'use strict';
+
+    $scope.countries = countries;
+
+    $scope.getCountryObj = function (country_name, callback) {
+        console.log('Selected: ', country_name);
+        var selectedCountryObj = countries.filter(function (elem) {
+            return (elem.name === country_name);
+        })[0];
+
+        callback(selectedCountryObj);
+    };
+
+});
+
+
 ngCountries.directive('ngcountries', function () {
     'use strict';
 
@@ -11,7 +29,6 @@ ngCountries.directive('ngcountries', function () {
         replace: true,
         controller: function ($scope) {
             $scope.countries = countries;
-
         },
         scope: {templateUrl: '='},
         templateUrl: function (tElement, tAttrs) {
@@ -28,6 +45,9 @@ ngCountries.run(function ($templateCache) {
     'use strict';
     $templateCache.put('listbootstrap.html', '<datalist id="countrylist"><option ng-repeat="country in countries" ng-value="country.name"></datalist>');
 });
+
+
+
 
 
 
