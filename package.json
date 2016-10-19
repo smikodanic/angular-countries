@@ -1,6 +1,6 @@
 {
   "name": "angular-countries",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Angular module to get country list with country ISO codes and dialing codes.",
   "main": "src/main.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "angular country list",
     "angular country select",
     "angular country datalist"
-
   ],
   "author": "Sasa Mikodanic",
   "license": "MIT",
