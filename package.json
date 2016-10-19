@@ -2,7 +2,7 @@
   "name": "angular-countries",
   "version": "1.0.0",
   "description": "Angular module to get country list with country ISO codes and dialing codes.",
-  "main": "countries.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,7 +30,12 @@
     "url": "https://github.com/smikodanic/angular-countries/issues"
   },
   "homepage": "https://github.com/smikodanic/angular-countries#readme",
-  "dependencies": {
-
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "gulp-header": "^1.8.8",
+    "gulp-uglify": "^2.0.0",
+    "rimraf": "^2.5.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

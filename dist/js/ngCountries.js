@@ -1,4 +1,49 @@
-[
+/*!
+ *  v1.0.0 (https://github.com/smikodanic/angular-countries#readme)
+ * Copyright 2014-2016 Sasa Mikodanic
+ * Licensed under MIT 
+ */
+
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/*global angular, window*/
+var countries = require('./models/countries.js');
+var ngCountries = angular.module('ngCountries', []);
+
+
+ngCountries.directive('ngcountries', function () {
+    'use strict';
+
+    var ngpassportForm = {
+        restrict: 'E',
+        replace: true,
+        controller: function ($scope) {
+            $scope.countries = countries;
+
+        },
+        scope: {templateUrl: '='},
+        templateUrl: function (tElement, tAttrs) {
+            return tAttrs.templateUrl || 'listbootstrap.html';
+        }
+    };
+
+    return ngpassportForm;
+});
+
+
+//define default template
+ngCountries.run(function ($templateCache) {
+    'use strict';
+    $templateCache.put('listbootstrap.html', '<datalist id="countrylist"><option ng-repeat="country in countries" ng-value="country.name"></datalist>');
+});
+
+
+
+
+module.exports = ngCountries;
+window.ngCountries = ngCountries;
+
+},{"./models/countries.js":2}],2:[function(require,module,exports){
+module.exports = [
 {
 "name": "Afghanistan",
 "dial_code": "+93",
@@ -1209,4 +1254,6 @@
 "dial_code": "+263",
 "code": "ZW"
 }
-]
+];
+
+},{}]},{},[1]);
