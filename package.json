@@ -1,0 +1,36 @@
+{
+  "name": "angular-countries",
+  "version": "1.0.0",
+  "description": "Angular module to get country list with country ISO codes and dialing codes.",
+  "main": "countries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smikodanic/angular-countries.git"
+  },
+  "keywords": [
+    "countries",
+    "country",
+    "angular",
+    "ng",
+    "select tag",
+    "country list",
+    "angular countries",
+    "angular country",
+    "angular country list",
+    "angular country select",
+    "angular country datalist"
+
+  ],
+  "author": "Sasa Mikodanic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smikodanic/angular-countries/issues"
+  },
+  "homepage": "https://github.com/smikodanic/angular-countries#readme",
+  "dependencies": {
+
+  }
+}
