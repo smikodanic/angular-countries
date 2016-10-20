@@ -1,5 +1,5 @@
 /*!
- *  v1.0.0 (https://github.com/smikodanic/angular-countries#readme)
+ *  v1.1.2 (https://github.com/smikodanic/angular-countries#readme)
  * Copyright 2014-2016 Sasa Mikodanic
  * Licensed under MIT 
  */
@@ -17,7 +17,7 @@ ngCountries.controller('ngCountriesCtrl', function ($scope) {
     $scope.countries = countries;
 
     $scope.getCountryObj = function (country_name, callback) {
-        console.log('Selected: ', country_name);
+        // console.log('Selected: ', country_name);
         var selectedCountryObj = countries.filter(function (elem) {
             return (elem.name === country_name);
         })[0];

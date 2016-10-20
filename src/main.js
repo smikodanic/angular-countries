@@ -10,7 +10,7 @@ ngCountries.controller('ngCountriesCtrl', function ($scope) {
     $scope.countries = countries;
 
     $scope.getCountryObj = function (country_name, callback) {
-        console.log('Selected: ', country_name);
+        // console.log('Selected: ', country_name);
         var selectedCountryObj = countries.filter(function (elem) {
             return (elem.name === country_name);
         })[0];
