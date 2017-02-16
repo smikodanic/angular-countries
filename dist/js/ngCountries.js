@@ -1,6 +1,6 @@
 /*!
- *  v1.1.2 (https://github.com/smikodanic/angular-countries#readme)
- * Copyright 2014-2016 Sasa Mikodanic
+ *  v1.1.3 (https://github.com/smikodanic/angular-countries#readme)
+ * Copyright 2014-2017 Sasa Mikodanic
  * Licensed under MIT 
  */
 
@@ -11,7 +11,7 @@ var ngCountries = angular.module('ngCountries', []);
 
 
 //controller
-ngCountries.controller('ngCountriesCtrl', function ($scope) {
+ngCountries.controller('ngCountriesCtrl', ['$scope', function ($scope) {
     'use strict';
 
     $scope.countries = countries;
@@ -25,7 +25,7 @@ ngCountries.controller('ngCountriesCtrl', function ($scope) {
         callback(selectedCountryObj);
     };
 
-});
+}]);
 
 
 ngCountries.directive('ngcountries', function () {
@@ -34,9 +34,9 @@ ngCountries.directive('ngcountries', function () {
     var ngpassportForm = {
         restrict: 'E',
         replace: true,
-        controller: function ($scope) {
+        controller: ['$scope', function ($scope) {
             $scope.countries = countries;
-        },
+        }],
         scope: {templateUrl: '='},
         templateUrl: function (tElement, tAttrs) {
             return tAttrs.templateUrl || 'listbootstrap.html';
@@ -48,10 +48,10 @@ ngCountries.directive('ngcountries', function () {
 
 
 //define default template
-ngCountries.run(function ($templateCache) {
+ngCountries.run(['$templateCache', function ($templateCache) {
     'use strict';
     $templateCache.put('listbootstrap.html', '<datalist id="countrylist"><option ng-repeat="country in countries" ng-value="country.name"></datalist>');
-});
+}]);
 
 
 
